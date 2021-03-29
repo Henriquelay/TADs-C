@@ -4,7 +4,7 @@ list_t* initList() {
     list_t* newList = (list_t*)malloc(sizeof(list_t));
     if (newList == NULL) {
         perror("Error creating new list. Exiting");
-        exit(1);
+        exit(EXIT_FAILURE);
     }
     newList->head = NULL;
     newList->tail = NULL;
@@ -19,7 +19,7 @@ void push(list_t* list, void* item) {
     linked_node_t* newNode = (linked_node_t*)malloc(sizeof(linked_node_t));
     if (newNode == NULL) {
         perror("Allocation error: Node couldn't be created. Exiting.");
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     newNode->value = item;
@@ -58,7 +58,7 @@ void enqueue(list_t* list, void* item) {
     linked_node_t* newNode = (linked_node_t*)malloc(sizeof(linked_node_t));
     if (newNode == NULL) {
         perror("Allocation error: Node couldn't be created. Exiting.");
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     newNode->value = item;
